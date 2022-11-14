@@ -18,7 +18,7 @@ namespace StackOverflow_Post
         public DateTime CreatedOn { get => _createdOn; }
         public int Vote { get => _vote; }
 
-        internal void CreatePost()
+        public void CreatePost()
         {
             Console.WriteLine("Please enter the title for your post:");
             _title = Console.ReadLine();
@@ -27,22 +27,22 @@ namespace StackOverflow_Post
             DisplayPost();
         }
 
-        internal void DisplayPost()
+        private void DisplayPost()
         {
             Console.WriteLine($"Your post... Title: {Title}, Description: {Description}, Created on: {CreatedOn}, Current Vote: {Vote}");
         }
 
-        internal void UpVote()
+        private void UpVote()
         {
             _vote++;
         }
 
-        internal void DownVote()
+        private void DownVote()
         {
             _vote--;
         }
 
-        internal void Voting()
+        public void Voting()
         {
             Console.WriteLine("Would you like to up vote this post? please enter \"U\" \nWould you like to down vote this post? please enter \"D\"");
             string answer = Console.ReadLine();
@@ -63,7 +63,7 @@ namespace StackOverflow_Post
             }
         }
 
-        internal void Repeat()
+        private void Repeat()
         {
             Console.WriteLine("Would you like to vote again");
             string answer = Console.ReadLine();
